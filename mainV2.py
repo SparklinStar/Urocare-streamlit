@@ -91,8 +91,8 @@ with col2:
                 response = output
                 st.write(response['result']['response'])
                 # Store conversation
-                st.session_state.past.append(input_text)
-                st.session_state.generated.append(response)
+                # st.session_state.past.append(input_text)
+                # st.session_state.generated.append(response)
 
                 #Display conversation in reverse order
             
