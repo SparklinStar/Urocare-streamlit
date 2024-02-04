@@ -2,10 +2,6 @@
 import os
 import streamlit as st
 from apikey import apikey
-from langchain.llms import OpenAI
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
-from langchain.memory import ConversationBufferMemory
 import requests
 
 # CSS styling
