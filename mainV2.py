@@ -36,45 +36,45 @@ st.write(css, unsafe_allow_html=True)
 from PIL import Image  # You need to install the Pillow library for image handling
 import requests
 
-url = "https://api.cloudflare.com/client/v4/accounts/78f84e7a44c04581f6beb072d05136d1/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0"
-headers = {
-    "Authorization": "Bearer nrh7rmLsTp0PXwggnTZR2oyP_MZuULPKFhetPyDo",
-    "Content-Type": "application/json",
-}
+# url = "https://api.cloudflare.com/client/v4/accounts/78f84e7a44c04581f6beb072d05136d1/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0"
+# headers = {
+#     "Authorization": "Bearer nrh7rmLsTp0PXwggnTZR2oyP_MZuULPKFhetPyDo",
+#     "Content-Type": "application/json",
+# }
 
-data = {
-    "prompt": "doctor avatar with a stethoscope, and a white coat, white background, minimalistic",
-}
+# data = {
+#     "prompt": "doctor avatar with a stethoscope, and a white coat, white background, minimalistic",
+# }
 
 
-response = requests.post(url, headers=headers, json=data)
-if response.status_code == 200:
-    with open("doctor.png", "wb") as f:
-        f.write(response.content)
-else:
-    print(f"Error: {response.status_code}, {response.text}")
+# response = requests.post(url, headers=headers, json=data)
+# if response.status_code == 200:
+#     with open("doctor.png", "wb") as f:
+#         f.write(response.content)
+# else:
+#     print(f"Error: {response.status_code}, {response.text}")
 
-# Load the image from a file or any source
+# # Load the image from a file or any source
 
   
 
-url = "https://api.cloudflare.com/client/v4/accounts/78f84e7a44c04581f6beb072d05136d1/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0"
-headers = {
-    "Authorization": "Bearer nrh7rmLsTp0PXwggnTZR2oyP_MZuULPKFhetPyDo",
-    "Content-Type": "application/json",
-}
+# url = "https://api.cloudflare.com/client/v4/accounts/78f84e7a44c04581f6beb072d05136d1/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0"
+# headers = {
+#     "Authorization": "Bearer nrh7rmLsTp0PXwggnTZR2oyP_MZuULPKFhetPyDo",
+#     "Content-Type": "application/json",
+# }
 
-data = {
-    "prompt": "user avatar with a face, white background, minimalistic",
-}
+# data = {
+#     "prompt": "user avatar with a face, white background, minimalistic",
+# }
 
 
-response = requests.post(url, headers=headers, json=data)
-if response.status_code == 200:
-    with open("user.png", "wb") as f:
-        f.write(response.content)
-else:
-    print(f"Error: {response.status_code}, {response.text}")
+# response = requests.post(url, headers=headers, json=data)
+# if response.status_code == 200:
+#     with open("user.png", "wb") as f:
+#         f.write(response.content)
+# else:
+#     print(f"Error: {response.status_code}, {response.text}")
 
 # Load the image from a file or any source
 
@@ -84,7 +84,7 @@ else:
    
     # Title and Description
 st.title("UroCare")
-st.write("Your friendly Urologist Doctor. Ask me any question related to sex health and I will provide you with the best possible answer. I am here to help you.")
+st.write("Your friendly Urologist Doctor. Ask me any question related to urological health and I will provide you with the best possible answer. I am here to help you.")
 
 
     
@@ -118,7 +118,7 @@ if prompt := st.chat_input("What is up?"):
         return response.json()
 
     inputs = [
-        { "role": "system", "content": "You are a Urologist Doctor with the name Dr. Pal who provides friendly assistance and helps to diagnose patients. Dont say you are an ai. Strictly Provide answers only if the question is in the field of Urology " },
+        { "role": "system", "content": "You are a Urologist Doctor with the name Dr. Pal who provides friendly assistance and helps to diagnose patients. Dont say you are an ai. Strictly Provide answers only if the question is in the field of Urology. Keep it short and simple easy to understand to the patient. " },
         { "role": "user", "content": prompt}
     ];
     response = run("@cf/meta/llama-2-7b-chat-int8", inputs)
